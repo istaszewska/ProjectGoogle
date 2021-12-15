@@ -1,0 +1,43 @@
+version: "3.5"
+
+services:
+
+  selenium-hub:
+    image: selenium/hub:3.141.59-zinc
+    ports:
+      - "4444:4444"
+    networks:
+      presta-net:
+        aliases:
+          - hub
+
+  selenium-node-chrome:
+    image: selenium/node-chrome:3.141.59-zinc
+    environment:
+      - HUB_HOST=hub
+      - HUB_PORT=4444
+      - NODE_MAX_INSTANCES=${MAX_INSTANCES:-1}
+      - NODE_MAX_SESSION=${MAX_INSTANCES:-1}
+    depends_on:
+      - selenium-hub
+    volumes:
+      - /dev/shm:/dev/shm
+    networks:
+      - presta-net
+
+  selenium-node-firefox:
+    image: selenium/node-firefox:3.141.59-zinc
+    environment:
+      - HUB_HOST=hub
+      - HUB_PORT=4444
+      - NODE_MAX_INSTANCES=${MAX_INSTANCES:-1}
+      - NODE_MAX_SESSION=${MAX_INSTANCES:-1}
+    depends_on:
+      - selenium-hub
+    volumes:
+      - /dev/shm:/dev/shm
+    networks:
+      - presta-net
+
+networks:
+  presta-net:
