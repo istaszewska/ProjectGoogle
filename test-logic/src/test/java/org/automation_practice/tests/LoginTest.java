@@ -12,8 +12,8 @@ import java.util.stream.Stream;
 
 public class LoginTest extends AbstractTest {
 
-    String user = testData.getUsersData().get(1).getEmail();
-    String password = testData.getUsersData().get(1).getPassword();
+    String user = testData.getUsersData().get(0).getEmail();
+    String password = testData.getUsersData().get(0).getPassword();
     HomePage homePage = new HomePage(driver);
 
     @Test
