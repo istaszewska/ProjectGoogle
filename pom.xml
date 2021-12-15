@@ -9,9 +9,9 @@
     <packaging>pom</packaging>
     <version>1.0-SNAPSHOT</version>
     <modules>
-        <module>template-api-testing</module>
-        <module>template-test-logic</module>
-        <module>template-webdriver</module>
+        <module>api-testing</module>
+        <module>test-logic</module>
+        <module>webdriver</module>
     </modules>
 
     <properties>
@@ -45,7 +45,6 @@
         </dependency>
 
 
-
         <!-- https://mvnrepository.com/artifact/io.rest-assured/rest-assured -->
         <dependency>
             <groupId>io.rest-assured</groupId>
@@ -62,16 +61,9 @@
         <dependency>
             <groupId>org.junit.jupiter</groupId>
             <artifactId>junit-jupiter</artifactId>
-            <version>RELEASE</version>
+            <version>5.8.2</version>
             <scope>test</scope>
         </dependency>
-        <dependency>
-            <groupId>org.junit.jupiter</groupId>
-            <artifactId>junit-jupiter</artifactId>
-            <version>RELEASE</version>
-            <scope>test</scope>
-        </dependency>
-
 
         <!-- https://mvnrepository.com/artifact/io.vavr/vavr -->
         <dependency>
