@@ -2,6 +2,7 @@ package com.google.homepage;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
@@ -20,7 +21,6 @@ public class AbstractPage {
     protected Wait<WebDriver> fluentWait;
     protected Actions action;
     private Logger logger = LogManager.getLogger(this.getClass().getName());
-
 
     public AbstractPage(WebDriver driver) {
         this.driver = driver;
@@ -43,6 +43,11 @@ public class AbstractPage {
     public void waitForButtonAndClick(WebElement button) {
         waitForElement(button);
         button.click();
+    }
+
+    public void getElementAndPressKey(WebElement element, Keys key){
+        waitForElement(element);
+        element.sendKeys(key);
     }
 
     public String getCurrentUrl() {
