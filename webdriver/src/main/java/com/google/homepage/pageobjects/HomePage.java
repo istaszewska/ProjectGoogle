@@ -1,14 +1,15 @@
 package com.google.homepage.pageobjects;
 
-import lombok.Getter;
-import net.thucydides.core.annotations.Step;
 import com.google.homepage.AbstractPage;
 import com.google.homepage.components.Footer;
+import lombok.Getter;
+import net.thucydides.core.annotations.Step;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -30,6 +31,11 @@ public class HomePage extends AbstractPage {
     @FindBy(css = "div.FPdoLc input.RNmpXc")
     private WebElement luckyStrikeButton;
 
+    @FindBy(xpath = "//p[@role='heading']")
+    private WebElement errorMessageHeader;
+
+    @FindBy(id = "cwos")
+    private WebElement calculationResult;
 
     public HomePage(WebDriver driver) {
         super(driver);
@@ -42,7 +48,9 @@ public class HomePage extends AbstractPage {
 
     @Step("Accept cookies")
     public HomePage acceptCookies() {
-        waitForButtonAndClick(acceptAllButton);
+        if (checkIfCookiesPopUpIsDisplayed()) {
+            acceptAllButton.click();
+        }
         return this;
     }
 
@@ -53,14 +61,14 @@ public class HomePage extends AbstractPage {
     }
 
     @Step("Navigate to Lucky Strike")
-    public HomePage navigateToLuckyStrike(){
+    public HomePage navigateToLuckyStrike() {
         waitForButtonAndClick(luckyStrikeButton);
         return this;
     }
 
 
     @Step("Type into Search Field {inputPhrase}")
-    public HomePage typeIntoUserNameField(String inputPhrase) {
+    public HomePage typeInSearchField(String inputPhrase) {
         waitForElement(searchInputBox);
         searchInputBox.clear();
         searchInputBox.sendKeys(inputPhrase);
@@ -72,6 +80,18 @@ public class HomePage extends AbstractPage {
     public List<String> getSearchResults() {
         return driver.findElements(By.xpath("//h3[contains(@class,'LC20lb')]"))
                 .stream().map(WebElement::getText).collect(Collectors.toList());
+    }
+
+    @Step("Get error message")
+    public String getErrorMessage() {
+        waitForElement(errorMessageHeader);
+        return errorMessageHeader.getText();
+    }
+
+    private boolean checkIfCookiesPopUpIsDisplayed() {
+        List<WebElement> listOfElements = new ArrayList<>(driver.findElements(By.id("S3BnEe")));
+        return listOfElements.size() > 0;
+
     }
 
 
