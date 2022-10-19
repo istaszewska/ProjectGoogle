@@ -4,12 +4,11 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>org.template.project</groupId>
-    <artifactId>template-maven-project</artifactId>
+    <groupId>org.project.google</groupId>
+    <artifactId>project-google-homepage</artifactId>
     <packaging>pom</packaging>
     <version>1.0-SNAPSHOT</version>
     <modules>
-        <module>api-testing</module>
         <module>test-logic</module>
         <module>webdriver</module>
     </modules>
@@ -41,15 +40,12 @@
         <dependency>
             <groupId>org.seleniumhq.selenium</groupId>
             <artifactId>selenium-java</artifactId>
-            <version>4.1.0</version>
+            <version>4.5.0</version>
         </dependency>
-
-
-        <!-- https://mvnrepository.com/artifact/io.rest-assured/rest-assured -->
         <dependency>
-            <groupId>io.rest-assured</groupId>
-            <artifactId>rest-assured</artifactId>
-            <version>${restassured.version}</version>
+            <groupId>org.aeonbits.owner</groupId>
+            <artifactId>owner</artifactId>
+            <version>1.0.12</version>
         </dependency>
 
         <dependency>
@@ -61,7 +57,7 @@
         <dependency>
             <groupId>org.junit.jupiter</groupId>
             <artifactId>junit-jupiter</artifactId>
-            <version>5.8.2</version>
+            <version>5.9.1</version>
             <scope>test</scope>
         </dependency>
 
@@ -76,7 +72,7 @@
         <dependency>
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>
-            <version>1.18.22</version>
+            <version>1.18.24</version>
             <scope>provided</scope>
         </dependency>
 
@@ -84,9 +80,8 @@
         <dependency>
             <groupId>io.github.bonigarcia</groupId>
             <artifactId>webdrivermanager</artifactId>
-            <version>5.0.3</version>
+            <version>5.3.0</version>
         </dependency>
-
         <dependency>
             <groupId>org.apache.maven.plugins</groupId>
             <artifactId>maven-surefire-plugin</artifactId>
@@ -98,7 +93,23 @@
             <artifactId>cucumber-java</artifactId>
             <version>7.1.0</version>
         </dependency>
-
+        <dependency>
+            <groupId>org.apache.logging.log4j</groupId>
+            <artifactId>log4j-core</artifactId>
+            <version>2.14.0</version>
+        </dependency>
+        <dependency>
+            <groupId>net.serenity-bdd</groupId>
+            <artifactId>serenity-core</artifactId>
+            <version>3.3.4</version>
+        </dependency>
+        <!-- https://mvnrepository.com/artifact/org.assertj/assertj-core -->
+        <dependency>
+            <groupId>org.assertj</groupId>
+            <artifactId>assertj-core</artifactId>
+            <version>3.23.1</version>
+            <scope>test</scope>
+        </dependency>
 
     </dependencies>
 

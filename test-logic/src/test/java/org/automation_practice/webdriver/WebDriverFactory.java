@@ -1,7 +1,8 @@
-package org.automation_practice.factory;
+package org.automation_practice.webdriver;
 
 import com.google.common.collect.ImmutableMap;
 import io.github.bonigarcia.wdm.WebDriverManager;
+import org.aeonbits.owner.ConfigFactory;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
@@ -17,6 +18,8 @@ import java.util.function.Supplier;
 public class WebDriverFactory {
 
     private static WebDriver webDriver;
+    private static Configuration configuration = ConfigFactory.create(Configuration.class);
+
     private static final Map<Browser, Supplier<WebDriver>> webDriversSuppliers = ImmutableMap.of(
             Browser.CHROME, getChromeWebDriver(),
             Browser.FIREFOX, getFirefoxWebDriver(),
@@ -26,7 +29,7 @@ public class WebDriverFactory {
 
     public static WebDriver getWebDriver() {
         if(webDriver == null) {
-            Browser browser = Configuration.BROWSER;
+            Browser browser = Browser.fromText(configuration.browser());
             webDriver = webDriversSuppliers.get(browser).get();
         }
         return webDriver;
