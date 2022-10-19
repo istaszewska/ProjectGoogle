@@ -1,4 +1,4 @@
-package org.automation_practice;
+package com.google.homepage;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;

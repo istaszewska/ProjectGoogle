@@ -1,6 +1,6 @@
-package org.automation_practice.tests;
+package com.google.homepage.tests;
 
-import org.automation_practice.pageobjects.AboutUs.AboutUsHeaders;
+import com.google.homepage.pageobjects.AboutUs.AboutUsHeaders;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 

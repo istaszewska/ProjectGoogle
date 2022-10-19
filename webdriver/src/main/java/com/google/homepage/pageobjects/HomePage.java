@@ -1,9 +1,9 @@
-package org.automation_practice.pageobjects;
+package com.google.homepage.pageobjects;
 
 import lombok.Getter;
 import net.thucydides.core.annotations.Step;
-import org.automation_practice.AbstractPage;
-import org.automation_practice.components.Footer;
+import com.google.homepage.AbstractPage;
+import com.google.homepage.components.Footer;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;

@@ -1,4 +1,4 @@
-package org.automation_practice.webdriver;
+package com.google.homepage.webdriver;
 
 import com.google.common.collect.ImmutableMap;
 import io.github.bonigarcia.wdm.WebDriverManager;
@@ -8,8 +8,8 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.ie.InternetExplorerDriver;
 import org.openqa.selenium.safari.SafariDriver;
-import org.automation_practice.configuration.Browser;
-import org.automation_practice.configuration.Configuration;
+import com.google.homepage.configuration.Browser;
+import com.google.homepage.configuration.Configuration;
 
 import java.time.Duration;
 import java.util.Map;

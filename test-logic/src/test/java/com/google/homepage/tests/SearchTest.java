@@ -1,4 +1,4 @@
-package org.automation_practice.tests;
+package com.google.homepage.tests;
 
 import org.junit.jupiter.api.Test;
 

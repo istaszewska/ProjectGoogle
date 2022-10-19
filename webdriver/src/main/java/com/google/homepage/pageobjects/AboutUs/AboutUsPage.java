@@ -1,7 +1,7 @@
-package org.automation_practice.pageobjects.AboutUs;
+package com.google.homepage.pageobjects.AboutUs;
 
+import com.google.homepage.AbstractPage;
 import net.thucydides.core.annotations.Step;
-import org.automation_practice.AbstractPage;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 

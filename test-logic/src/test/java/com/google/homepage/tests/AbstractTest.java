@@ -1,8 +1,8 @@
-package org.automation_practice.tests;
+package com.google.homepage.tests;
 
 import com.github.javafaker.Faker;
-import org.automation_practice.pageobjects.HomePage;
-import org.automation_practice.webdriver.WebDriverFactory;
+import com.google.homepage.pageobjects.HomePage;
+import com.google.homepage.webdriver.WebDriverFactory;
 import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.BeforeEach;
 import org.openqa.selenium.WebDriver;

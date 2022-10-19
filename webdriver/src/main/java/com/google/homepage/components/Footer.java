@@ -1,8 +1,8 @@
-package org.automation_practice.components;
+package com.google.homepage.components;
 
 import lombok.Getter;
-import org.automation_practice.AbstractPage;
-import org.automation_practice.pageobjects.AboutUs.AboutUsPage;
+import com.google.homepage.AbstractPage;
+import com.google.homepage.pageobjects.AboutUs.AboutUsPage;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;

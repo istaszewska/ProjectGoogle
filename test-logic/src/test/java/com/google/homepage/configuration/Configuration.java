@@ -1,4 +1,4 @@
-package org.automation_practice.configuration;
+package com.google.homepage.configuration;
 
 import org.aeonbits.owner.Config;
 
